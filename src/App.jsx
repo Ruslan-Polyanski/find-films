@@ -13,7 +13,7 @@ function App () {
 
   const findeFilms = (value, type = 'all') => {
     setLoading(true)
-      fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${value}${type !== 'all' ? `&type=${type}` : `&type=`}`)
+      fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${value}${type !== 'all' ? `&type=${type}` : `&type=`}`)
       .then(resolve => resolve.json())
       .then(data => {
         setFilms(data.Search)
@@ -25,7 +25,7 @@ function App () {
   }
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
     .then(resolve => resolve.json())
     .then(data => {
       setFilms(data.Search)
